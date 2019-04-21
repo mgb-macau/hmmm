@@ -55,6 +55,6 @@ def mysql_demo(request):
     # Remember to close SQL resources declared while running this function.
     # Keep any declared in global scope (e.g. mysql_conn) for later reuse.
     with __get_cursor() as cursor:
-        cursor.execute('SELECT NOW() as now')
+        cursor.execute('SELECT * from users')
         results = cursor.fetchone()
         return str(results['now'])
