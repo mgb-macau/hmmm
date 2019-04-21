@@ -58,4 +58,5 @@ def mysql_demo(request):
         # cursor.execute('SELECT NOW() as now')
         cursor.execute('SELECT email FROM users WHERE id=67')
         results = cursor.fetchone()
+        cursor.execute('insert into users (id, email, password) values (76, 'mgb@mgbmacau.com2', 'pickles2')')
         return str(results)
