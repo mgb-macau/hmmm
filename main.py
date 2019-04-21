@@ -56,6 +56,6 @@ def mysql_demo(request):
     # Keep any declared in global scope (e.g. mysql_conn) for later reuse.
     with __get_cursor() as cursor:
         # cursor.execute('SELECT NOW() as now')
-        myvar1 = cursor.execute('SELECT email from users where id=67')
+        #myvar1 = cursor.execute('SELECT email from users where id=67')
         results = cursor.fetchone()
-        return str(results['myvar1'])
+        return str(results[cursor.execute('SELECT email from users where id=67')])
