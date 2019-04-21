@@ -56,7 +56,9 @@ def mysql_demo(request):
     # Keep any declared in global scope (e.g. mysql_conn) for later reuse.
     with __get_cursor() as cursor:
         # cursor.execute('SELECT NOW() as now')
-        cursor.execute('INSERT INTO 'users' (email) VALUES ('mgb@mgb.mgb')')
+        sqlcode1 = "INSERT INTO users (email, password) VALUES (%s, %s)"
+        myvals = ("mgb@mgb.mgb", "Highway21")
+        cursor.execute(sqlcode1, myvals)
         cursor.execute('SELECT email FROM users WHERE id=67')
         results = cursor.fetchone()
         return str(results)
