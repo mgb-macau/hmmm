@@ -60,5 +60,6 @@ def mysql_demo(request):
         myvals = ("mgb@mgb.mgb", "Highway21")
         cursor.execute(sqlcode1, myvals)
         cursor.execute('SELECT * FROM users')
-        results = cursor.fetchone()
+        # results = cursor.fetchone()
+        results = cursor.fetchall()
         return str(results)
