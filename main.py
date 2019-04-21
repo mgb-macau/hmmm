@@ -40,7 +40,8 @@ def __get_cursor():
 
 def mysql_demo(request):
     global mysql_conn
-
+    email1="this@email.add"
+    pwd1="mypass"
     # Initialize connections lazily, in case SQL access isn't needed for this
     # GCF instance. Doing so minimizes the number of active SQL connections,
     # which helps keep your GCF instances under SQL connection limits.
@@ -57,7 +58,7 @@ def mysql_demo(request):
     with __get_cursor() as cursor:
         # cursor.execute('SELECT NOW() as now')
         sqlcode1 = "INSERT INTO users (email, password) VALUES (%s, %s)"
-        myvals = ("mgb@mgb.mgb", "Highway21")
+        myvals = (email1, pwd1)
         cursor.execute(sqlcode1, myvals)
         cursor.execute('SELECT * FROM users')
         # results = cursor.fetchone()
