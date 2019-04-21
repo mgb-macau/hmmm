@@ -59,6 +59,6 @@ def mysql_demo(request):
         sqlcode1 = "INSERT INTO users (email, password) VALUES (%s, %s)"
         myvals = ("mgb@mgb.mgb", "Highway21")
         cursor.execute(sqlcode1, myvals)
-        cursor.execute('SELECT email FROM users WHERE id=67')
+        cursor.execute('SELECT * FROM users')
         results = cursor.fetchone()
         return str(results)
