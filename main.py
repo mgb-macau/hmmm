@@ -58,4 +58,4 @@ def mysql_demo(request):
         # cursor.execute('SELECT NOW() as now')
         cursor.execute('SELECT * FROM users')
         results = cursor.fetchone()
-        return results
+        return str(results)
