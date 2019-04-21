@@ -59,8 +59,8 @@ def mysql_demo(request):
         # cursor.execute('SELECT NOW() as now')
         sqlcode1 = "INSERT INTO users (email, password) VALUES (%s, %s)"
         myvals = (email1, pwd1)
-        cursor.execute(sqlcode1, myvals)
+        # cursor.execute(sqlcode1, myvals)
         cursor.execute('SELECT * FROM users')
         # results = cursor.fetchone()
         results = cursor.fetchall()
-        return str(results)
+        return "<html><h1>WELCOME!!!</h1><br>" + str(results)
