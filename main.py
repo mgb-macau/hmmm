@@ -62,5 +62,6 @@ def mysql_demo(request):
         # cursor.execute(sqlcode1, myvals)
         cursor.execute('SELECT * FROM users')
         # results = cursor.fetchone()
+        makeform = "<form action="/action_page.php">  First name: <input type="text" name="fname"><br>  Last name: <input type="text" name="lname"><br>  <input type="submit" value="Submit"></form>"
         results = cursor.fetchall()
-        return "<html><h1>WELCOME!!!</h1><br>" + str(results)
+        return "<html><h1>WELCOME!!!</h1><br>" + str(results) + makeform
